@@ -32,7 +32,12 @@ const Login = () => {
   const login = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.fizitech.org/login", values)
+      .post("https://backend.fizitech.org/login", values, {
+        withCredentials: true, // This ensures that cookies are sent
+        headers: {
+          "Content-Type": "application/json", // Set the Content-Type header
+        },
+      })
       .then((res) => {
         if (res.data.Login === "admin") {
           navigate("/admin");
