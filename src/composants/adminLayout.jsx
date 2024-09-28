@@ -9,7 +9,7 @@ const AdminLayout = () => {
   const [nom, setNom] = useState();
   useEffect(() => {
     axios
-      .get("http://localhost:500/authentification")
+      .get("https://backend.fizitech.org/authentification")
       .then((res) => {
         if (res.data.valid && res.data.role === "admin") {
           setNom(res.data.nomUser);

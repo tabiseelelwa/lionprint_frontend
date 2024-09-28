@@ -9,28 +9,28 @@ const Accueil = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreClients`)
+      .get(`https://backend.fizitech.org/nombreClients`)
       .then((res) => setNobreClients(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreCdesEnCours`)
+      .get(`https://backend.fizitech.org/nombreCdesEnCours`)
       .then((res) => setNombreCmdesEnc(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreCdesFactur`)
+      .get(`https://backend.fizitech.org/nombreCdesFactur`)
       .then((res) => setNombreCdesFactur(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreCdesAnnul`)
+      .get(`https://backend.fizitech.org/nombreCdesAnnul`)
       .then((res) => setNombreCdesAnnul(res.data))
       .catch((err) => console.log(err));
   }, []);

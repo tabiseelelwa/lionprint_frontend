@@ -13,7 +13,7 @@ const AjoutProduit = () => {
   const createProd = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:500/creatProd", produits)
+      .post("https://backend.fizitech.org/creatProd", produits)
       .then((res) => {
         navigate("/admin/liste-des-produits");
       })

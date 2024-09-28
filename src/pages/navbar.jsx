@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/lionprint.png"
+import logo from "../images/lionprint.png";
 
 const Navbar = () => {
   const [nom, setNom] = useState();
   useEffect(() => {
-    axios.get("http://localhost:500/authentification").then((res) => {
+    axios.get("https://backend.fizitech.org/authentification").then((res) => {
       setNom(res.data.nomUser);
     });
   }, []);
@@ -14,7 +14,7 @@ const Navbar = () => {
   const deconnexion = (e) => {
     e.preventDefault();
     axios
-      .get("http://localhost:500/logout")
+      .get("https://backend.fizitech.org/logout")
       .then((res) => {
         window.location.reload();
       })

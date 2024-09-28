@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AdminNav = () => {
   const [nom, setNom] = useState();
   useEffect(() => {
-    axios.get("http://localhost:500/authentification").then((res) => {
+    axios.get("https://backend.fizitech.org/authentification").then((res) => {
       setNom(res.data.nomUser);
     });
   }, []);
@@ -13,7 +13,7 @@ const AdminNav = () => {
   const deconnexion = (e) => {
     e.preventDefault();
     axios
-      .get("http://localhost:500/logout")
+      .get("https://backend.fizitech.org/logout")
       .then((res) => {
         window.location.reload();
       })

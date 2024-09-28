@@ -13,7 +13,7 @@ const Commande = () => {
   // Récupération des données de la facture
   useEffect(() => {
     axios
-      .get(`http://localhost:500/recupDetComm/${num}`)
+      .get(`https://backend.fizitech.org/recupDetComm/${num}`)
       .then((res) => {
         setCommande(res.data);
       })
@@ -23,7 +23,7 @@ const Commande = () => {
   // Récupération du nom du client ayant commandé
   useEffect(() => {
     axios
-      .get(`http://localhost:500/recupNomClient/${num}`)
+      .get(`https://backend.fizitech.org/recupNomClient/${num}`)
       .then((res) => {
         setNomClient(res.data[0].client);
       })

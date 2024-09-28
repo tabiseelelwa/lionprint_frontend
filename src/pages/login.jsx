@@ -14,7 +14,7 @@ const Login = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:500/authentification")
+      .get("https://backend.fizitech.org/authentification")
       .then((res) => {
         if (res.data.valid) {
           if (res.data.role === "admin") {
@@ -32,7 +32,7 @@ const Login = () => {
   const login = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:500/login", values)
+      .post("https://backend.fizitech.org/login", values)
       .then((res) => {
         if (res.data.Login === "admin") {
           navigate("/admin");
