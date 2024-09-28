@@ -50,7 +50,7 @@ const Accueil = () => {
       <div className="clientsCdes">
         <div className="clients">
           <h1>{nombreClients}</h1>
-          <p>Clients</p>
+          <p>Nombre de clients</p>
         </div>
         <div className="clients">
           <h1>{nombreCmdesEnc}</h1>
