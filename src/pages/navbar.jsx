@@ -6,7 +6,7 @@ import logo from "../images/lionprint.png";
 const Navbar = () => {
   const [nom, setNom] = useState();
   useEffect(() => {
-    axios.get("https://backend.fizitech.org/authentification").then((res) => {
+    axios.get("http://localhost:500/authentification").then((res) => {
       setNom(res.data.nomUser);
     });
   }, []);
@@ -14,7 +14,7 @@ const Navbar = () => {
   const deconnexion = (e) => {
     e.preventDefault();
     axios
-      .get("https://backend.fizitech.org/logout")
+      .get("http://localhost:500/logout")
       .then((res) => {
         window.location.reload();
       })

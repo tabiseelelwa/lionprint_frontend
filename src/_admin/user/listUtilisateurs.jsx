@@ -8,14 +8,14 @@ const ListUtilisateurs = () => {
 
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/recupUsers")
+      .get("http://localhost:500/recupUsers")
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   const supprimerUser = (idUser) => {
     axios
-      .delete("https://backend.fizitech.org/supprUser/" + idUser)
+      .delete("http://localhost:500/supprUser/" + idUser)
       .then((res) => window.location.reload())
       .catch((err) => console.log(err));
   };

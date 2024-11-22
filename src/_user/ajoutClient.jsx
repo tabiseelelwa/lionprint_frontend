@@ -15,7 +15,7 @@ const AjoutClient = () => {
   const enregClient = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.fizitech.org/creatClient", clients)
+      .post("http://localhost:500/creatClient", clients)
       .then((res) => {
         console.log(res.data);
         navigate("/liste-des-clients");

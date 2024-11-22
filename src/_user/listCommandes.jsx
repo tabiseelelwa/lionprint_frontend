@@ -12,7 +12,7 @@ const ListCommandes = () => {
   const [role, setRole] = useState();
 
   useEffect(() => {
-    axios.get("https://backend.fizitech.org/authentification").then((res) => {
+    axios.get("http://localhost:500/authentification").then((res) => {
       setRole(res.data.role);
     });
   }, []);
@@ -20,7 +20,7 @@ const ListCommandes = () => {
   // Toutes les commandes nulles
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/recupCmdsNull")
+      .get("http://localhost:500/recupCmdsNull")
       .then((res) => {
         setCmdsNulles(res.data);
       })
@@ -30,7 +30,7 @@ const ListCommandes = () => {
   // Toutes les commandes non nulles
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/recupCmds")
+      .get("http://localhost:500/recupCmds")
       .then((res) => {
         setCmds(res.data);
       })
@@ -39,7 +39,7 @@ const ListCommandes = () => {
 
   const facturer = (numCom) => {
     axios
-      .put("https://backend.fizitech.org/facturer/" + numCom)
+      .put("http://localhost:500/facturer/" + numCom)
       .then((res) => {
         window.location.reload();
       })
@@ -48,7 +48,7 @@ const ListCommandes = () => {
 
   const Annuler = (numCom) => {
     axios
-      .put("https://backend.fizitech.org/annuler/" + numCom)
+      .put("http://localhost:500/annuler/" + numCom)
       .then((res) => {
         window.location.reload();
       })
@@ -57,7 +57,7 @@ const ListCommandes = () => {
 
   const suppri = (numCom) => {
     axios
-      .delete("https://backend.fizitech.org/suppCde/" + numCom)
+      .delete("http://localhost:500/suppCde/" + numCom)
       .then((res) => window.location.reload())
       .catch((err) => console.log(err));
   };

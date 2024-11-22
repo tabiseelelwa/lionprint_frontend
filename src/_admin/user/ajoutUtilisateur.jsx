@@ -14,7 +14,7 @@ const AjoutUtilisateur = () => {
   const enregUser = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.fizitech.org/creatUser", values)
+      .post("http://localhost:500/creatUser", values)
       .then((res) => {
         console.log(res);
         navigate("/admin/liste-des-utilisateurs");

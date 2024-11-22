@@ -11,7 +11,7 @@ const AjoutCommande = ({ setModal }) => {
   const creatCommande = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.fizitech.org/commande", value)
+      .post("http://localhost:500/commande", value)
       .then((res) => {
         console.log(res.data);
         setModal(false);
@@ -22,7 +22,7 @@ const AjoutCommande = ({ setModal }) => {
 
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/recupClient")
+      .get("http://localhost:500/recupClient")
       .then((res) => {
         console.log(res.data);
         setClient(res.data);

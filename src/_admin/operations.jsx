@@ -11,42 +11,42 @@ const Operations = () => {
 
   useEffect(() => {
     axios
-      .get(`https://backend.fizitech.org/nombreUtilisateurs`)
+      .get(`http://localhost:500/nombreUtilisateurs`)
       .then((res) => setNombreUtlisateurs(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://backend.fizitech.org/nombreProduits`)
+      .get(`http://localhost:500/nombreProduits`)
       .then((res) => setNombreProduits(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://backend.fizitech.org/nombreClients`)
+      .get(`http://localhost:500/nombreClients`)
       .then((res) => setNobreClients(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://backend.fizitech.org/nombreCdesEnCours`)
+      .get(`http://localhost:500/nombreCdesEnCours`)
       .then((res) => setNombreCmdesEnc(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://backend.fizitech.org/nombreCdesFactur`)
+      .get(`http://localhost:500/nombreCdesFactur`)
       .then((res) => setNombreCdesFactur(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://backend.fizitech.org/nombreCdesAnnul`)
+      .get(`http://localhost:500/nombreCdesAnnul`)
       .then((res) => setNombreCdesAnnul(res.data))
       .catch((err) => console.log(err));
   }, []);

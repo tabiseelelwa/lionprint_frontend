@@ -13,7 +13,7 @@ const ModifProduit = () => {
 
   useEffect(() => {
     axios
-      .get(`https://backend.fizitech.org/recupProd/${codeProd}`)
+      .get(`http://localhost:500/recupProd/${codeProd}`)
       .then((res) =>
         setProduit({
           ...produit,
@@ -30,7 +30,7 @@ const ModifProduit = () => {
   const modifProd = (e) => {
     e.preventDefault();
     axios
-      .put(`https://backend.fizitech.org/modifProd/${codeProd}`, produit)
+      .put(`http://localhost:500/modifProd/${codeProd}`, produit)
       .then((res) => {
         console.log(res);
         navigate("/admin/liste-des-produits");

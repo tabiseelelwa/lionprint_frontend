@@ -22,7 +22,7 @@ const ElementsCde = () => {
   // Récupération du numéro de la dernière commande
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/dernCommande")
+      .get("http://localhost:500/dernCommande")
       .then((res) => {
         console.log(res.data);
         setNumCommande(res.data);
@@ -33,7 +33,7 @@ const ElementsCde = () => {
   // Récupération des détails de la dernière commande
   useEffect(() => {
     axios
-      .get(`https://backend.fizitech.org/recupDetComm/${num}`)
+      .get(`http://localhost:500/recupDetComm/${num}`)
       .then((res) => {
         console.log(res.data);
         setDetailCmd(res.data);
@@ -44,7 +44,7 @@ const ElementsCde = () => {
   // Récupération des produits
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/recupProds")
+      .get("http://localhost:500/recupProds")
       .then((res) => {
         console.log(res.data);
         setProd(res.data);
@@ -56,7 +56,7 @@ const ElementsCde = () => {
   const postDetCom = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.fizitech.org/destailCommande", value)
+      .post("http://localhost:500/destailCommande", value)
       .then((res) => {
         console.log(res.data);
         setShowModal(false);
@@ -84,7 +84,7 @@ const ElementsCde = () => {
   const terminerCde = (e) => {
     e.preventDefault();
     axios
-      .put("https://backend.fizitech.org/terminerCde/" + num)
+      .put("http://localhost:500/terminerCde/" + num)
       .then((res) => {
         console.log(res.data);
         navigate("/list-cdes");

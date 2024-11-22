@@ -14,7 +14,7 @@ const Login = () => {
 
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/authentification")
+      .get("http://localhost:500/authentification")
       .then((res) => {
         if (res.data.valid) {
           if (res.data.role === "admin") {
@@ -27,12 +27,12 @@ const Login = () => {
         }
       })
       .catch((err) => console.log(err));
-  }, []);
+  });
 
   const login = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.fizitech.org/login", values, {
+      .post("http://localhost:500/login", values, {
         withCredentials: true, // This ensures that cookies are sent
         headers: {
           "Content-Type": "application/json", // Set the Content-Type header

@@ -8,7 +8,7 @@ const ListClient = () => {
   const [role, setRole] = useState();
 
   useEffect(() => {
-    axios.get("https://backend.fizitech.org/authentification").then((res) => {
+    axios.get("http://localhost:500/authentification").then((res) => {
       console.log(res.data.role);
       setRole(res.data.role);
     });
@@ -16,7 +16,7 @@ const ListClient = () => {
 
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/recupClient")
+      .get("http://localhost:500/recupClient")
       .then((res) => {
         console.log(res.data);
         setClients(res.data);
@@ -26,7 +26,7 @@ const ListClient = () => {
 
   const suppClient = (numClient) => {
     axios
-      .delete("https://backend.fizitech.org/suppClient/" + numClient)
+      .delete("http://localhost:500/suppClient/" + numClient)
       .then((res) => window.location.reload())
       .catch((err) => console.log(err));
   };

@@ -8,7 +8,7 @@ const ListProduits = () => {
 
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/recupProds")
+      .get("http://localhost:500/recupProds")
       .then((res) => {
         setProduits(res.data);
       })
@@ -17,7 +17,7 @@ const ListProduits = () => {
 
   const supprimer = (codeProd) => {
     axios
-      .delete("https://backend.fizitech.org/supprimer/" + codeProd)
+      .delete("http://localhost:500/supprimer/" + codeProd)
       .then((res) => {
         window.location.reload();
       })

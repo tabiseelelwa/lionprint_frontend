@@ -15,7 +15,7 @@ const ModifUtilisateur = () => {
   });
 
   useEffect(() => {
-    axios.get("https://backend.fizitech.org/recupUser/" + idUser).then((res) =>
+    axios.get("http://localhost:500/recupUser/" + idUser).then((res) =>
       setUser({
         ...user,
         nom: res.data[0].nomUser,
@@ -31,7 +31,7 @@ const ModifUtilisateur = () => {
   const modifUser = (e) => {
     e.preventDefault();
     axios
-      .put(`https://backend.fizitech.org/modifUser/${idUser}`, user)
+      .put(`http://localhost:500/modifUser/${idUser}`, user)
       .then((res) => {
         console.log(res.data);
         navigate("/admin/liste-des-utilisateurs");

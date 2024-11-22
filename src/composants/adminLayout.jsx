@@ -9,7 +9,7 @@ const AdminLayout = () => {
   const [nom, setNom] = useState();
   useEffect(() => {
     axios
-      .get("https://backend.fizitech.org/authentification")
+      .get("http://localhost:500/authentification")
       .then((res) => {
         if (res.data.valid && res.data.role === "admin") {
           setNom(res.data.nomUser);
@@ -18,7 +18,7 @@ const AdminLayout = () => {
         }
       })
       .catch((err) => console.log(err));
-  }, []);
+  });
   return (
     <div className="">
       <AdminNav />
