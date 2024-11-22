@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.844f5fce.css",
+    "main.js": "/static/js/main.1703de6a.js",
+    "static/media/lionprint.png": "/static/media/lionprint.025d93eb5f5ce50a77b8.png",
+    "index.html": "/index.html",
+    "main.844f5fce.css.map": "/static/css/main.844f5fce.css.map",
+    "main.1703de6a.js.map": "/static/js/main.1703de6a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.844f5fce.css",
+    "static/js/main.1703de6a.js"
+  ]
+}
