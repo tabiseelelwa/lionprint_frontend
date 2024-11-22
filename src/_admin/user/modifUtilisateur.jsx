@@ -15,23 +15,25 @@ const ModifUtilisateur = () => {
   });
 
   useEffect(() => {
-    axios.get("http://localhost:500/recupUser/" + idUser).then((res) =>
-      setUser({
-        ...user,
-        nom: res.data[0].nomUser,
-        postnom: res.data[0].postnomUser,
-        prenom: res.data[0].prenomUser,
-        email: res.data[0].email,
-        telephone: res.data[0].telephone,
-        role: res.data[0].role,
-      })
-    );
+    axios
+      .get("https://backend.lion-print.net/recupUser/" + idUser)
+      .then((res) =>
+        setUser({
+          ...user,
+          nom: res.data[0].nomUser,
+          postnom: res.data[0].postnomUser,
+          prenom: res.data[0].prenomUser,
+          email: res.data[0].email,
+          telephone: res.data[0].telephone,
+          role: res.data[0].role,
+        })
+      );
   }, []);
 
   const modifUser = (e) => {
     e.preventDefault();
     axios
-      .put(`http://localhost:500/modifUser/${idUser}`, user)
+      .put(`https://backend.lion-print.net/modifUser/${idUser}`, user)
       .then((res) => {
         console.log(res.data);
         navigate("/admin/liste-des-utilisateurs");

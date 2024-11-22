@@ -11,42 +11,42 @@ const Operations = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreUtilisateurs`)
+      .get(`https://backend.lion-print.net/nombreUtilisateurs`)
       .then((res) => setNombreUtlisateurs(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreProduits`)
+      .get(`https://backend.lion-print.net/nombreProduits`)
       .then((res) => setNombreProduits(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreClients`)
+      .get(`https://backend.lion-print.net/nombreClients`)
       .then((res) => setNobreClients(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreCdesEnCours`)
+      .get(`https://backend.lion-print.net/nombreCdesEnCours`)
       .then((res) => setNombreCmdesEnc(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreCdesFactur`)
+      .get(`https://backend.lion-print.net/nombreCdesFactur`)
       .then((res) => setNombreCdesFactur(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`http://localhost:500/nombreCdesAnnul`)
+      .get(`https://backend.lion-print.net/nombreCdesAnnul`)
       .then((res) => setNombreCdesAnnul(res.data))
       .catch((err) => console.log(err));
   }, []);

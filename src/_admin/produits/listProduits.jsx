@@ -8,7 +8,7 @@ const ListProduits = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:500/recupProds")
+      .get("https://backend.lion-print.net/recupProds")
       .then((res) => {
         setProduits(res.data);
       })
@@ -17,7 +17,7 @@ const ListProduits = () => {
 
   const supprimer = (codeProd) => {
     axios
-      .delete("http://localhost:500/supprimer/" + codeProd)
+      .delete("https://backend.lion-print.net/supprimer/" + codeProd)
       .then((res) => {
         window.location.reload();
       })
