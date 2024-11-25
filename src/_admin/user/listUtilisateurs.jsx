@@ -8,14 +8,14 @@ const ListUtilisateurs = () => {
 
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/recupUsers")
+      .get("htpps://lion-print.net/recupUsers")
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   const supprimerUser = (idUser) => {
     axios
-      .delete("https://backend.lion-print.net/supprUser/" + idUser)
+      .delete("htpps://lion-print.net/supprUser/" + idUser)
       .then((res) => window.location.reload())
       .catch((err) => console.log(err));
   };

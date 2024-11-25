@@ -9,28 +9,28 @@ const Accueil = () => {
 
   useEffect(() => {
     axios
-      .get(`https://backend.lion-print.net/nombreClients`)
+      .get(`htpps://lion-print.net/nombreClients`)
       .then((res) => setNobreClients(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://backend.lion-print.net/nombreCdesEnCours`)
+      .get(`htpps://lion-print.net/nombreCdesEnCours`)
       .then((res) => setNombreCmdesEnc(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://backend.lion-print.net/nombreCdesFactur`)
+      .get(`htpps://lion-print.net/nombreCdesFactur`)
       .then((res) => setNombreCdesFactur(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     axios
-      .get(`https://backend.lion-print.net/nombreCdesAnnul`)
+      .get(`htpps://lion-print.net/nombreCdesAnnul`)
       .then((res) => setNombreCdesAnnul(res.data))
       .catch((err) => console.log(err));
   }, []);
