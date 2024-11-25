@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AdminNav = () => {
   const [nom, setNom] = useState();
   useEffect(() => {
-    axios.get("htpps://lion-print.net/authentification").then((res) => {
+    axios.get("https://backend.lion-print.net/authentification").then((res) => {
       setNom(res.data.nomUser);
     });
   }, []);
@@ -13,7 +13,7 @@ const AdminNav = () => {
   const deconnexion = (e) => {
     e.preventDefault();
     axios
-      .get("htpps://lion-print.net/logout")
+      .get("https://backend.lion-print.net/logout")
       .then((res) => {
         window.location.reload();
       })

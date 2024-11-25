@@ -9,7 +9,7 @@ const AdminLayout = () => {
   const [nom, setNom] = useState();
   useEffect(() => {
     axios
-      .get("htpps://lion-print.net/authentification")
+      .get("https://backend.lion-print.net/authentification")
       .then((res) => {
         if (res.data.valid && res.data.role === "admin") {
           setNom(res.data.nomUser);

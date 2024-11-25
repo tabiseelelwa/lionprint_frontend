@@ -11,7 +11,7 @@ const AjoutCommande = ({ setModal }) => {
   const creatCommande = (e) => {
     e.preventDefault();
     axios
-      .post("htpps://lion-print.net/commande", value)
+      .post("https://backend.lion-print.net/commande", value)
       .then((res) => {
         console.log(res.data);
         setModal(false);
@@ -22,7 +22,7 @@ const AjoutCommande = ({ setModal }) => {
 
   useEffect(() => {
     axios
-      .get("htpps://lion-print.net/recupClient")
+      .get("https://backend.lion-print.net/recupClient")
       .then((res) => {
         console.log(res.data);
         setClient(res.data);

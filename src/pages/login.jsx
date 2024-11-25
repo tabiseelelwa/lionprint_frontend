@@ -14,7 +14,7 @@ const Login = () => {
 
   useEffect(() => {
     axios
-      .get("htpps://lion-print.net/authentification")
+      .get("https://backend.lion-print.net/authentification")
       .then((res) => {
         if (res.data.valid) {
           if (res.data.role === "admin") {
@@ -32,7 +32,7 @@ const Login = () => {
   const login = (e) => {
     e.preventDefault();
     axios
-      .post("htpps://lion-print.net/login", values, {
+      .post("https://backend.lion-print.net/login", values, {
         withCredentials: true, // This ensures that cookies are sent
         headers: {
           "Content-Type": "application/json", // Set the Content-Type header

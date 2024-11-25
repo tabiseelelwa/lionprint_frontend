@@ -13,7 +13,7 @@ const ModifProduit = () => {
 
   useEffect(() => {
     axios
-      .get(`htpps://lion-print.net/recupProd/${codeProd}`)
+      .get(`https://backend.lion-print.net/recupProd/${codeProd}`)
       .then((res) =>
         setProduit({
           ...produit,
@@ -30,7 +30,7 @@ const ModifProduit = () => {
   const modifProd = (e) => {
     e.preventDefault();
     axios
-      .put(`htpps://lion-print.net/modifProd/${codeProd}`, produit)
+      .put(`https://backend.lion-print.net/modifProd/${codeProd}`, produit)
       .then((res) => {
         console.log(res);
         navigate("/admin/liste-des-produits");

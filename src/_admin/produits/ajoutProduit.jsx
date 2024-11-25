@@ -13,7 +13,7 @@ const AjoutProduit = () => {
   const createProd = (e) => {
     e.preventDefault();
     axios
-      .post("htpps://lion-print.net/creatProd", produits)
+      .post("https://backend.lion-print.net/creatProd", produits)
       .then((res) => {
         navigate("/admin/liste-des-produits");
       })

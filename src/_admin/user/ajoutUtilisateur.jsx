@@ -14,7 +14,7 @@ const AjoutUtilisateur = () => {
   const enregUser = (e) => {
     e.preventDefault();
     axios
-      .post("htpps://lion-print.net/creatUser", values)
+      .post("https://backend.lion-print.net/creatUser", values)
       .then((res) => {
         console.log(res);
         navigate("/admin/liste-des-utilisateurs");

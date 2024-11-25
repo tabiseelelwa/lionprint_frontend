@@ -16586,9 +16586,11 @@
       const eo = () => {
           const [e, t] = (0, r.useState)();
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/authentification").then((e) => {
-              t(e.data.nomUser);
-            });
+            Gr.get("https://backend.lion-print.net/authentification").then(
+              (e) => {
+                t(e.data.nomUser);
+              }
+            );
           }, []);
           return (0, Zr.jsxs)("div", {
             className: "navba contener",
@@ -16637,7 +16639,7 @@
                     className: "bouton",
                     onClick: (e) => {
                       e.preventDefault(),
-                        Gr.get("htpps://lion-print.net/logout")
+                        Gr.get("https://backend.lion-print.net/logout")
                           .then((e) => {
                             window.location.reload();
                           })
@@ -16656,7 +16658,7 @@
           const [t, n] = (0, r.useState)();
           return (
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/authentification")
+              Gr.get("https://backend.lion-print.net/authentification")
                 .then((t) => {
                   t.data.valid && "admin" === t.data.role
                     ? n(t.data.nomUser)
@@ -16673,9 +16675,11 @@
         no = () => {
           const [e, t] = (0, r.useState)();
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/authentification").then((e) => {
-              t(e.data.nomUser);
-            });
+            Gr.get("https://backend.lion-print.net/authentification").then(
+              (e) => {
+                t(e.data.nomUser);
+              }
+            );
           }, []);
           return (0, Zr.jsxs)("div", {
             className: "navba contener",
@@ -16714,7 +16718,7 @@
                     className: "bouton",
                     onClick: (e) => {
                       e.preventDefault(),
-                        Gr.get("htpps://lion-print.net/logout")
+                        Gr.get("https://backend.lion-print.net/logout")
                           .then((e) => {
                             window.location.reload();
                           })
@@ -16733,7 +16737,7 @@
           const [t, n] = (0, r.useState)();
           return (
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/authentification")
+              Gr.get("https://backend.lion-print.net/authentification")
                 .then((t) => {
                   t.data.valid && "simple_user" === t.data.role
                     ? n(t.data.nomUser)
@@ -16753,7 +16757,7 @@
             [o, a] = (0, r.useState)({ email: "", mdp: "" });
           (Gr.defaults.withCredentials = !0),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/authentification")
+              Gr.get("https://backend.lion-print.net/authentification")
                 .then((t) => {
                   t.data.valid &&
                     ("admin" === t.data.role
@@ -16769,7 +16773,7 @@
             children: (0, Zr.jsxs)("form", {
               onSubmit: (t) => {
                 t.preventDefault(),
-                  Gr.post("htpps://lion-print.net/login", o, {
+                  Gr.post("https://backend.lion-print.net/login", o, {
                     withCredentials: !0,
                     headers: { "Content-Type": "application/json" },
                   })
@@ -17072,7 +17076,7 @@
             [a, i] = (0, r.useState)({ nomClient: "" });
           return (
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/recupClient")
+              Gr.get("https://backend.lion-print.net/recupClient")
                 .then((e) => {
                   console.log(e.data), o(e.data);
                 })
@@ -17085,7 +17089,7 @@
                 children: (0, Zr.jsxs)("form", {
                   onSubmit: (e) => {
                     e.preventDefault(),
-                      Gr.post("htpps://lion-print.net/commande", a)
+                      Gr.post("https://backend.lion-print.net/commande", a)
                         .then((e) => {
                           console.log(e.data), t(!1), window.location.reload();
                         })
@@ -17137,19 +17141,21 @@
             [a, i] = (0, r.useState)([]),
             [l, s] = (0, r.useState)();
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/authentification").then((e) => {
-              s(e.data.role);
-            });
+            Gr.get("https://backend.lion-print.net/authentification").then(
+              (e) => {
+                s(e.data.role);
+              }
+            );
           }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/recupCmdsNull")
+              Gr.get("https://backend.lion-print.net/recupCmdsNull")
                 .then((e) => {
                   i(e.data);
                 })
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/recupCmds")
+              Gr.get("https://backend.lion-print.net/recupCmds")
                 .then((e) => {
                   o(e.data);
                 })
@@ -17261,7 +17267,7 @@
                                             return (
                                               (t = e.numCom),
                                               void Gr.put(
-                                                "htpps://lion-print.net/facturer/" +
+                                                "https://backend.lion-print.net/facturer/" +
                                                   t
                                               )
                                                 .then((e) => {
@@ -17288,7 +17294,7 @@
                                             return (
                                               (t = e.numCom),
                                               void Gr.put(
-                                                "htpps://lion-print.net/annuler/" +
+                                                "https://backend.lion-print.net/annuler/" +
                                                   t
                                               )
                                                 .then((e) => {
@@ -17318,7 +17324,7 @@
                                           return (
                                             (t = e.numCom),
                                             void Gr.delete(
-                                              "htpps://lion-print.net/suppCde/" +
+                                              "https://backend.lion-print.net/suppCde/" +
                                                 t
                                             )
                                               .then((e) =>
@@ -17376,14 +17382,14 @@
             [o, a] = (0, r.useState)([]),
             [i, l] = (0, r.useState)(0);
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/recupDetComm/".concat(e))
+            Gr.get("https://backend.lion-print.net/recupDetComm/".concat(e))
               .then((e) => {
                 n(e.data);
               })
               .catch((e) => console.log(e));
           }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/recupNomClient/".concat(e))
+              Gr.get("https://backend.lion-print.net/recupNomClient/".concat(e))
                 .then((e) => {
                   a(e.data[0].client);
                 })
@@ -17501,12 +17507,14 @@
           const [e, t] = (0, r.useState)([]),
             [n, o] = (0, r.useState)();
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/authentification").then((e) => {
-              console.log(e.data.role), o(e.data.role);
-            });
+            Gr.get("https://backend.lion-print.net/authentification").then(
+              (e) => {
+                console.log(e.data.role), o(e.data.role);
+              }
+            );
           }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/recupClient")
+              Gr.get("https://backend.lion-print.net/recupClient")
                 .then((e) => {
                   console.log(e.data), t(e.data);
                 })
@@ -17582,7 +17590,7 @@
                                         return (
                                           (t = e.numClient),
                                           void Gr.delete(
-                                            "htpps://lion-print.net/suppClient/" +
+                                            "https://backend.lion-print.net/suppClient/" +
                                               t
                                           )
                                             .then((e) =>
@@ -17648,7 +17656,7 @@
             children: (0, Zr.jsxs)("form", {
               onSubmit: (n) => {
                 n.preventDefault(),
-                  Gr.post("htpps://lion-print.net/creatClient", t)
+                  Gr.post("https://backend.lion-print.net/creatClient", t)
                     .then((t) => {
                       console.log(t.data), e("/liste-des-clients");
                     })
@@ -17700,21 +17708,21 @@
               quantProd: "",
             });
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/dernCommande")
+            Gr.get("https://backend.lion-print.net/dernCommande")
               .then((e) => {
                 console.log(e.data), s(e.data);
               })
               .catch((e) => console.log(e));
           }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/recupDetComm/".concat(n))
+              Gr.get("https://backend.lion-print.net/recupDetComm/".concat(n))
                 .then((e) => {
                   console.log(e.data), c(e.data);
                 })
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/recupProds")
+              Gr.get("https://backend.lion-print.net/recupProds")
                 .then((e) => {
                   console.log(e.data), i(e.data);
                 })
@@ -17737,7 +17745,10 @@
                     children: (0, Zr.jsxs)("form", {
                       onSubmit: (e) => {
                         e.preventDefault(),
-                          Gr.post("htpps://lion-print.net/destailCommande", p)
+                          Gr.post(
+                            "https://backend.lion-print.net/destailCommande",
+                            p
+                          )
                             .then((e) => {
                               console.log(e.data),
                                 t(!1),
@@ -17897,7 +17908,9 @@
                       className: "enregCommande",
                       onClick: (e) => {
                         e.preventDefault(),
-                          Gr.put("htpps://lion-print.net/terminerCde/" + n)
+                          Gr.put(
+                            "https://backend.lion-print.net/terminerCde/" + n
+                          )
                             .then((e) => {
                               console.log(e.data), o("/list-cdes");
                             })
@@ -17918,22 +17931,22 @@
             [l, s] = (0, r.useState)();
           return (
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreClients")
+              Gr.get("https://backend.lion-print.net/nombreClients")
                 .then((e) => t(e.data))
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreCdesEnCours")
+              Gr.get("https://backend.lion-print.net/nombreCdesEnCours")
                 .then((e) => o(e.data))
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreCdesFactur")
+              Gr.get("https://backend.lion-print.net/nombreCdesFactur")
                 .then((e) => i(e.data))
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreCdesAnnul")
+              Gr.get("https://backend.lion-print.net/nombreCdesAnnul")
                 .then((e) => s(e.data))
                 .catch((e) => console.log(e));
             }, []),
@@ -17999,32 +18012,32 @@
             [d, f] = (0, r.useState)();
           return (
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreUtilisateurs")
+              Gr.get("https://backend.lion-print.net/nombreUtilisateurs")
                 .then((e) => c(e.data))
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreProduits")
+              Gr.get("https://backend.lion-print.net/nombreProduits")
                 .then((e) => f(e.data))
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreClients")
+              Gr.get("https://backend.lion-print.net/nombreClients")
                 .then((e) => t(e.data))
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreCdesEnCours")
+              Gr.get("https://backend.lion-print.net/nombreCdesEnCours")
                 .then((e) => o(e.data))
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreCdesFactur")
+              Gr.get("https://backend.lion-print.net/nombreCdesFactur")
                 .then((e) => i(e.data))
                 .catch((e) => console.log(e));
             }, []),
             (0, r.useEffect)(() => {
-              Gr.get("htpps://lion-print.net/nombreCdesAnnul")
+              Gr.get("https://backend.lion-print.net/nombreCdesAnnul")
                 .then((e) => s(e.data))
                 .catch((e) => console.log(e));
             }, []),
@@ -18121,7 +18134,7 @@
         Lo = () => {
           const [e, t] = (0, r.useState)([]);
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/recupUsers")
+            Gr.get("https://backend.lion-print.net/recupUsers")
               .then((e) => t(e.data))
               .catch((e) => console.log(e));
           }, []);
@@ -18196,7 +18209,8 @@
                                     return (
                                       (t = e.idUser),
                                       void Gr.delete(
-                                        "htpps://lion-print.net/supprUser/" + t
+                                        "https://backend.lion-print.net/supprUser/" +
+                                          t
                                       )
                                         .then((e) => window.location.reload())
                                         .catch((e) => console.log(e))
@@ -18257,7 +18271,7 @@
               role: "",
             });
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/recupUser/" + e).then((e) =>
+            Gr.get("https://backend.lion-print.net/recupUser/" + e).then((e) =>
               o({
                 ...n,
                 nom: e.data[0].nomUser,
@@ -18274,7 +18288,10 @@
             children: (0, Zr.jsxs)("form", {
               onSubmit: (r) => {
                 r.preventDefault(),
-                  Gr.put("htpps://lion-print.net/modifUser/".concat(e), n)
+                  Gr.put(
+                    "https://backend.lion-print.net/modifUser/".concat(e),
+                    n
+                  )
                     .then((e) => {
                       console.log(e.data), t("/admin/liste-des-utilisateurs");
                     })
@@ -18349,7 +18366,7 @@
             children: (0, Zr.jsxs)("form", {
               onSubmit: (n) => {
                 n.preventDefault(),
-                  Gr.post("htpps://lion-print.net/creatUser", t)
+                  Gr.post("https://backend.lion-print.net/creatUser", t)
                     .then((t) => {
                       console.log(t), e("/admin/liste-des-utilisateurs");
                     })
@@ -18400,7 +18417,7 @@
             children: (0, Zr.jsxs)("form", {
               onSubmit: (n) => {
                 n.preventDefault(),
-                  Gr.post("htpps://lion-print.net/creatProd", t)
+                  Gr.post("https://backend.lion-print.net/creatProd", t)
                     .then((t) => {
                       e("/admin/liste-des-produits");
                     })
@@ -18431,7 +18448,7 @@
         Fo = () => {
           const [e, t] = (0, r.useState)([]);
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/recupProds")
+            Gr.get("https://backend.lion-print.net/recupProds")
               .then((e) => {
                 t(e.data);
               })
@@ -18502,7 +18519,8 @@
                                     return (
                                       (t = e.codeProd),
                                       void Gr.delete(
-                                        "htpps://lion-print.net/supprimer/" + t
+                                        "https://backend.lion-print.net/supprimer/" +
+                                          t
                                       )
                                         .then((e) => {
                                           window.location.reload();
@@ -18562,7 +18580,7 @@
               categorie: "",
             });
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/recupProd/".concat(t))
+            Gr.get("https://backend.lion-print.net/recupProd/".concat(t))
               .then((e) =>
                 o({
                   ...n,
@@ -18580,7 +18598,10 @@
             children: (0, Zr.jsxs)("form", {
               onSubmit: (r) => {
                 r.preventDefault(),
-                  Gr.put("htpps://lion-print.net/modifProd/".concat(t), n)
+                  Gr.put(
+                    "https://backend.lion-print.net/modifProd/".concat(t),
+                    n
+                  )
                     .then((t) => {
                       console.log(t), e("/admin/liste-des-produits");
                     })
@@ -18622,7 +18643,7 @@
               telephone: "",
             });
           (0, r.useEffect)(() => {
-            Gr.get("htpps://lion-print.net/recupCli/" + e)
+            Gr.get("https://backend.lion-print.net/recupCli/" + e)
               .then((e) => {
                 o({
                   ...n,
@@ -18640,7 +18661,10 @@
             children: (0, Zr.jsxs)("form", {
               onSubmit: (r) => {
                 r.preventDefault(),
-                  Gr.put("htpps://lion-print.net/modifCli/".concat(e), n)
+                  Gr.put(
+                    "https://backend.lion-print.net/modifCli/".concat(e),
+                    n
+                  )
                     .then((e) => {
                       t("/admin/liste-des-clients");
                     })
