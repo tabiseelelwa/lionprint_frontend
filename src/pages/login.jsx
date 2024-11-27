@@ -11,7 +11,6 @@ const Login = () => {
   });
 
   axios.defaults.withCredentials = true;
-
   useEffect(() => {
     axios
       .get("https://backend.lion-print.net/authentification")
