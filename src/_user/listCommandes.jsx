@@ -10,7 +10,7 @@ const ListCommandes = () => {
   const [cmdsNulles, setCmdsNulles] = useState([]);
   const [role, setRole] = useState();
 
-  const backend = "http://localhost:500";
+  const backend = "https://backend.lion-print.net";
 
   useEffect(() => {
     axios.get(`${backend}/authentification`).then((res) => {

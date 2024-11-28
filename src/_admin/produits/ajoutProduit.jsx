@@ -10,7 +10,7 @@ const AjoutProduit = () => {
     categorie: "",
   });
 
-  const backend = "http://localhost:500";
+  const backend = "https://backend.lion-print.net";
 
   const createProd = (e) => {
     e.preventDefault();

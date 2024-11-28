@@ -21,7 +21,7 @@ const ElementsCde = () => {
     quantProd: "",
   });
 
-  const backend = "http://localhost:500";
+  const backend = "https://backend.lion-print.net";
 
   // Récupération du numéro de la dernière commande
   useEffect(() => {
@@ -129,9 +129,7 @@ const ElementsCde = () => {
               <input
                 type="number"
                 placeholder="Prix"
-                onChange={(e) =>
-                  setValue({ ...value, prix: e.target.value })
-                }
+                onChange={(e) => setValue({ ...value, prix: e.target.value })}
               />
               <input
                 type="number"
