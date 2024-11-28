@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -14,26 +15,26 @@ const ModifUtilisateur = () => {
     role: "",
   });
 
+  const backend = "http://localhost:500";
+
   useEffect(() => {
-    axios
-      .get("https://backend.lion-print.net/recupUser/" + idUser)
-      .then((res) =>
-        setUser({
-          ...user,
-          nom: res.data[0].nomUser,
-          postnom: res.data[0].postnomUser,
-          prenom: res.data[0].prenomUser,
-          email: res.data[0].email,
-          telephone: res.data[0].telephone,
-          role: res.data[0].role,
-        })
-      );
+    axios.get(`${backend}/recupUser/` + idUser).then((res) =>
+      setUser({
+        ...user,
+        nom: res.data[0].nomUser,
+        postnom: res.data[0].postnomUser,
+        prenom: res.data[0].prenomUser,
+        email: res.data[0].email,
+        telephone: res.data[0].telephone,
+        role: res.data[0].role,
+      })
+    );
   }, []);
 
   const modifUser = (e) => {
     e.preventDefault();
     axios
-      .put(`https://backend.lion-print.net/modifUser/${idUser}`, user)
+      .put(`${backend}/modifUser/${idUser}`, user)
       .then((res) => {
         console.log(res.data);
         navigate("/admin/liste-des-utilisateurs");

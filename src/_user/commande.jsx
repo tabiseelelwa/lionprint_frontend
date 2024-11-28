@@ -1,8 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useReactToPrint } from "react-to-print";
-import logo from "../images/lionprint.png";
+// import logo  from "../images/lionprint.png";
 
 const Commande = () => {
   const { num } = useParams();
@@ -10,10 +11,12 @@ const Commande = () => {
   const [nomClient, setNomClient] = useState([]);
   const [total, setTotal] = useState(0);
 
+  const backend = "http://localhost:500";
+
   // Récupération des données de la facture
   useEffect(() => {
     axios
-      .get(`https://backend.lion-print.net/recupDetComm/${num}`)
+      .get(`${backend}/recupDetComm/${num}`)
       .then((res) => {
         setCommande(res.data);
       })
@@ -23,7 +26,7 @@ const Commande = () => {
   // Récupération du nom du client ayant commandé
   useEffect(() => {
     axios
-      .get(`https://backend.lion-print.net/recupNomClient/${num}`)
+      .get(`${backend}/recupNomClient/${num}`)
       .then((res) => {
         setNomClient(res.data[0].client);
       })
@@ -56,7 +59,7 @@ const Commande = () => {
           className="body"
           style={{ width: "100%", padding: "2rem" }}
         >
-          {/* <div className="entete">
+          {/* <div className="entete" style={{height: "250px", width: "100%"}}>
             <img src={logo} alt="" />
           </div> */}
           <p>
@@ -64,7 +67,7 @@ const Commande = () => {
           </p>
           <hr />
           <div className="commande">
-            <table className="table table-stripped ">
+            <table className="table table-borderless ">
               <thead>
                 <tr>
                   <th>Produit</th>
@@ -76,12 +79,12 @@ const Commande = () => {
 
               <tbody>
                 {commande.map((com, i) => {
-                  const totalPrix = com.quantite * com.Prix;
+                  const totalPrix = com.quantite * com.prixUnit;
                   return (
                     <tr key={i}>
                       <td>{com.desiProd}</td>
                       <td style={{ textAlign: "right" }}>{com.quantite}</td>
-                      <td style={{ textAlign: "right" }}>{com.Prix}</td>
+                      <td style={{ textAlign: "right" }}>{com.prixUnit}</td>
                       <td style={{ textAlign: "right" }} className="total">
                         {totalPrix}
                       </td>
@@ -98,7 +101,7 @@ const Commande = () => {
             }}
           >
             <h3 style={{ fontWeight: "bold" }}>Total</h3>
-            <h3 style={{ fontWeight: "bold" }}>{total} $</h3>
+            <h3 style={{ fontWeight: "bold" }}>{total.toLocaleString()} $</h3>
           </div>
         </div>
         <button onClick={imprimer} style={{ margin: " 0 5rem 0 1rem" }}>

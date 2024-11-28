@@ -6,9 +6,11 @@ import axios from "axios";
 const ListProduits = () => {
   const [produits, setProduits] = useState([]);
 
+  const backend = "http://localhost:500";
+
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/recupProds")
+      .get(`${backend}/recupProds`)
       .then((res) => {
         setProduits(res.data);
       })
@@ -17,7 +19,7 @@ const ListProduits = () => {
 
   const supprimer = (codeProd) => {
     axios
-      .delete("https://backend.lion-print.net/supprimer/" + codeProd)
+      .delete(`${backend}/supprimer/` + codeProd)
       .then((res) => {
         window.location.reload();
       })

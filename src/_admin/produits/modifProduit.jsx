@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -11,9 +12,11 @@ const ModifProduit = () => {
     categorie: "",
   });
 
+  const backend = "http://localhost:500";
+
   useEffect(() => {
     axios
-      .get(`https://backend.lion-print.net/recupProd/${codeProd}`)
+      .get(`${backend}/recupProd/${codeProd}`)
       .then((res) =>
         setProduit({
           ...produit,
@@ -25,12 +28,12 @@ const ModifProduit = () => {
       .catch((err) => {
         console.log(err);
       });
-  }, [codeProd]);
+  }, []);
 
   const modifProd = (e) => {
     e.preventDefault();
     axios
-      .put(`https://backend.lion-print.net/modifProd/${codeProd}`, produit)
+      .put(`${backend}/modifProd/${codeProd}`, produit)
       .then((res) => {
         console.log(res);
         navigate("/admin/liste-des-produits");

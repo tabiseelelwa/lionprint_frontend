@@ -11,10 +11,12 @@ const AjoutUtilisateur = () => {
     telephone: "",
   });
 
+  const backend = "http://localhost:500";
+
   const enregUser = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.lion-print.net/creatUser", values)
+      .post(`${backend}/creatUser`, values)
       .then((res) => {
         console.log(res);
         navigate("/admin/liste-des-utilisateurs");

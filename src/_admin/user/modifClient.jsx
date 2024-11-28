@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
@@ -13,9 +14,11 @@ const ModifClient = () => {
     telephone: "",
   });
 
+  const backend = "http://localhost:500";
+
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/recupCli/" + numCli)
+      .get(`${backend}/recupCli/` + numCli)
       .then((res) => {
         setClients({
           ...clients,
@@ -32,7 +35,7 @@ const ModifClient = () => {
   const modif = (e) => {
     e.preventDefault();
     axios
-      .put(`https://backend.lion-print.net/modifCli/${numCli}`, clients)
+      .put(`${backend}/modifCli/${numCli}`, clients)
       .then((res) => {
         navigate("/admin/liste-des-clients");
       })

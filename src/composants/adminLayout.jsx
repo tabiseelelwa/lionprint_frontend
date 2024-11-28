@@ -7,9 +7,12 @@ const AdminLayout = () => {
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
   const [nom, setNom] = useState();
+
+  const backend = "http://localhost:500";
+
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/authentification")
+      .get(`${backend}/authentification`)
       .then((res) => {
         if (res.data.valid && res.data.role === "admin") {
           setNom(res.data.nomUser);
@@ -20,7 +23,7 @@ const AdminLayout = () => {
       .catch((err) => console.log(err));
   });
   return (
-    <div className="">
+    <div className={nom}>
       <AdminNav />
       <Outlet />
     </div>

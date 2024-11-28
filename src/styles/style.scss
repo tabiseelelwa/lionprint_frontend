@@ -193,10 +193,13 @@
       }
 
       .produits {
-        display: grid;
-        grid-template-columns: 50% 40%;
+        display: flex;
         justify-content: space-between;
         gap: 1rem;
+
+        input[type="number"] {
+          width: 110px;
+        }
       }
 
       span {

@@ -4,8 +4,11 @@ import logo from "../images/lionprint.png";
 import { Link } from "react-router-dom";
 const AdminNav = () => {
   const [nom, setNom] = useState();
+
+  const backend = "http://localhost:500";
+
   useEffect(() => {
-    axios.get("https://backend.lion-print.net/authentification").then((res) => {
+    axios.get(`${backend}/authentification`).then((res) => {
       setNom(res.data.nomUser);
     });
   }, []);
@@ -13,7 +16,7 @@ const AdminNav = () => {
   const deconnexion = (e) => {
     e.preventDefault();
     axios
-      .get("https://backend.lion-print.net/logout")
+      .get(`${backend}/logout`)
       .then((res) => {
         window.location.reload();
       })

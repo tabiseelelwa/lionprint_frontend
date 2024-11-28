@@ -6,16 +6,18 @@ import axios from "axios";
 const ListUtilisateurs = () => {
   const [users, setUsers] = useState([]);
 
+  const backend = "http://localhost:500";
+
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/recupUsers")
+      .get(`${backend}/recupUsers`)
       .then((res) => setUsers(res.data))
       .catch((err) => console.log(err));
   }, []);
 
   const supprimerUser = (idUser) => {
     axios
-      .delete("https://backend.lion-print.net/supprUser/" + idUser)
+      .delete(`${backend}/supprUser/` + idUser)
       .then((res) => window.location.reload())
       .catch((err) => console.log(err));
   };

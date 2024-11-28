@@ -8,11 +8,12 @@ const ListCommandes = () => {
   const [modal, setModal] = useState(false);
   const [cmds, setCmds] = useState([]);
   const [cmdsNulles, setCmdsNulles] = useState([]);
-
   const [role, setRole] = useState();
 
+  const backend = "http://localhost:500";
+
   useEffect(() => {
-    axios.get("https://backend.lion-print.net/authentification").then((res) => {
+    axios.get(`${backend}/authentification`).then((res) => {
       setRole(res.data.role);
     });
   }, []);
@@ -20,7 +21,7 @@ const ListCommandes = () => {
   // Toutes les commandes nulles
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/recupCmdsNull")
+      .get(`${backend}/recupCmdsNull`)
       .then((res) => {
         setCmdsNulles(res.data);
       })
@@ -30,7 +31,7 @@ const ListCommandes = () => {
   // Toutes les commandes non nulles
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/recupCmds")
+      .get(`${backend}/recupCmds`)
       .then((res) => {
         setCmds(res.data);
       })
@@ -39,7 +40,7 @@ const ListCommandes = () => {
 
   const facturer = (numCom) => {
     axios
-      .put("https://backend.lion-print.net/facturer/" + numCom)
+      .put(`${backend}/facturer/` + numCom)
       .then((res) => {
         window.location.reload();
       })
@@ -48,7 +49,7 @@ const ListCommandes = () => {
 
   const Annuler = (numCom) => {
     axios
-      .put("https://backend.lion-print.net/annuler/" + numCom)
+      .put(`${backend}/annuler/` + numCom)
       .then((res) => {
         window.location.reload();
       })
@@ -57,7 +58,7 @@ const ListCommandes = () => {
 
   const suppri = (numCom) => {
     axios
-      .delete("https://backend.lion-print.net/suppCde/" + numCom)
+      .delete(`${backend}/suppCde/` + numCom)
       .then((res) => window.location.reload())
       .catch((err) => console.log(err));
   };

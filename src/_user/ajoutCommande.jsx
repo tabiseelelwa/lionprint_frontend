@@ -8,12 +8,13 @@ const AjoutCommande = ({ setModal }) => {
     nomClient: "",
   });
 
+  const backend = "http://localhost:500";
+
   const creatCommande = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.lion-print.net/commande", value)
+      .post(`${backend}/commande`, value)
       .then((res) => {
-        console.log(res.data);
         setModal(false);
         window.location.reload();
       })
@@ -22,9 +23,8 @@ const AjoutCommande = ({ setModal }) => {
 
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/recupClient")
+      .get(`${backend}/recupClient`)
       .then((res) => {
-        console.log(res.data);
         setClient(res.data);
       })
       .catch((err) => console.log(err));

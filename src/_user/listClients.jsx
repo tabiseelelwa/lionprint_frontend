@@ -7,18 +7,18 @@ const ListClient = () => {
   const [clients, setClients] = useState([]);
   const [role, setRole] = useState();
 
+  const backend = "http://localhost:500";
+
   useEffect(() => {
-    axios.get("https://backend.lion-print.net/authentification").then((res) => {
-      console.log(res.data.role);
+    axios.get(`${backend}/authentification`).then((res) => {
       setRole(res.data.role);
     });
   }, []);
 
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/recupClient")
+      .get(`${backend}/recupClient`)
       .then((res) => {
-        console.log(res.data);
         setClients(res.data);
       })
       .catch((err) => console.log(err));
@@ -26,7 +26,7 @@ const ListClient = () => {
 
   const suppClient = (numClient) => {
     axios
-      .delete("https://backend.lion-print.net/suppClient/" + numClient)
+      .delete(`${backend}/suppClient/` + numClient)
       .then((res) => window.location.reload())
       .catch((err) => console.log(err));
   };

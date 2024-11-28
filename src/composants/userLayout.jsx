@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import Navbar from "../pages/navbar";
@@ -7,9 +8,12 @@ const UserLayout = () => {
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
   const [nom, setNom] = useState();
+
+  const backend = "http://localhost:500";
+
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/authentification")
+      .get(`${backend}/authentification`)
       .then((res) => {
         if (res.data.valid && res.data.role === "simple_user") {
           setNom(res.data.nomUser);
@@ -20,7 +24,7 @@ const UserLayout = () => {
       .catch((err) => console.log(err));
   }, []);
   return (
-    <div className="">
+    <div className={nom}>
       <Navbar />
       <Outlet />
     </div>

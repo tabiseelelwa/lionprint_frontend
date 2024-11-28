@@ -10,10 +10,12 @@ const AjoutProduit = () => {
     categorie: "",
   });
 
+  const backend = "http://localhost:500";
+
   const createProd = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.lion-print.net/creatProd", produits)
+      .post(`${backend}/creatProd`, produits)
       .then((res) => {
         navigate("/admin/liste-des-produits");
       })

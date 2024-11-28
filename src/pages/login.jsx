@@ -10,10 +10,12 @@ const Login = () => {
     mdp: "",
   });
 
+  const backend = "http://localhost:500";
+
   axios.defaults.withCredentials = true;
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/authentification")
+      .get(`${backend}/authentification`)
       .then((res) => {
         if (res.data.valid) {
           if (res.data.role === "admin") {
@@ -31,7 +33,7 @@ const Login = () => {
   const login = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.lion-print.net/login", values, {
+      .post(`${backend}/login`, values, {
         withCredentials: true, // This ensures that cookies are sent
         headers: {
           "Content-Type": "application/json", // Set the Content-Type header

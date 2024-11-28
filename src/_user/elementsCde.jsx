@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import { GoPlus, GoTrash } from "react-icons/go";
+import { GoPlus } from "react-icons/go";
 import { useNavigate, useParams } from "react-router-dom";
 
 const ElementsCde = () => {
@@ -13,18 +14,20 @@ const ElementsCde = () => {
   const [total, setTotal] = useState(0);
 
   const [value, setValue] = useState({
-    // Pour les valeurs à enregistrer dans détails command
+    // Les valeurs à enregistrer dans détails command
     numCom: "",
     designProduit: "",
+    prix: 0,
     quantProd: "",
   });
+
+  const backend = "http://localhost:500";
 
   // Récupération du numéro de la dernière commande
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/dernCommande")
+      .get(`${backend}/dernCommande`)
       .then((res) => {
-        console.log(res.data);
         setNumCommande(res.data);
       })
       .catch((err) => console.log(err));
@@ -33,9 +36,8 @@ const ElementsCde = () => {
   // Récupération des détails de la dernière commande
   useEffect(() => {
     axios
-      .get(`https://backend.lion-print.net/recupDetComm/${num}`)
+      .get(`${backend}/recupDetComm/${num}`)
       .then((res) => {
-        console.log(res.data);
         setDetailCmd(res.data);
       })
       .catch((err) => console.log(err));
@@ -44,9 +46,8 @@ const ElementsCde = () => {
   // Récupération des produits
   useEffect(() => {
     axios
-      .get("https://backend.lion-print.net/recupProds")
+      .get(`${backend}/recupProds`)
       .then((res) => {
-        console.log(res.data);
         setProd(res.data);
       })
       .catch((err) => console.log(err));
@@ -56,9 +57,8 @@ const ElementsCde = () => {
   const postDetCom = (e) => {
     e.preventDefault();
     axios
-      .post("https://backend.lion-print.net/destailCommande", value)
+      .post(`${backend}/destailCommande`, value)
       .then((res) => {
-        console.log(res.data);
         setShowModal(false);
         window.location.reload();
       })
@@ -84,9 +84,8 @@ const ElementsCde = () => {
   const terminerCde = (e) => {
     e.preventDefault();
     axios
-      .put("https://backend.lion-print.net/terminerCde/" + num)
+      .put(`${backend}/terminerCde/` + num)
       .then((res) => {
-        console.log(res.data);
         navigate("/list-cdes");
       })
       .catch((err) => console.log(err));
@@ -129,6 +128,13 @@ const ElementsCde = () => {
 
               <input
                 type="number"
+                placeholder="Prix"
+                onChange={(e) =>
+                  setValue({ ...value, prix: e.target.value })
+                }
+              />
+              <input
+                type="number"
                 placeholder="Quantité"
                 onChange={(e) =>
                   setValue({ ...value, quantProd: e.target.value })
@@ -158,23 +164,19 @@ const ElementsCde = () => {
                 <th style={{ textAlign: "right" }}>Quantité</th>
                 <th style={{ textAlign: "right" }}>P.U</th>
                 <th style={{ textAlign: "right" }}>P.T</th>
-                <th></th>
               </tr>
             </thead>
 
             <tbody>
               {detailCmd.map((cmd, i) => {
-                const PrixTotal = cmd.quantite * cmd.Prix;
+                const PrixTotal = cmd.quantite * cmd.prixUnit;
                 return (
                   <tr key={i}>
                     <td>{cmd.desiProd}</td>
                     <td style={{ textAlign: "right" }}>{cmd.quantite}</td>
-                    <td style={{ textAlign: "right" }}>{cmd.Prix}</td>
+                    <td style={{ textAlign: "right" }}>{cmd.prixUnit}</td>
                     <td style={{ textAlign: "right" }} className="total">
                       {PrixTotal}
-                    </td>
-                    <td style={{ color: "red" }}>
-                      <GoTrash />
                     </td>
                   </tr>
                 );
@@ -184,7 +186,7 @@ const ElementsCde = () => {
         </div>
         <div className="calcul">
           <h4>Total</h4>
-          <h4> {total} $</h4>
+          <h4> {total.toLocaleString()} $</h4>
         </div>
         <div>
           <button className="enregCommande" onClick={terminerCde}>

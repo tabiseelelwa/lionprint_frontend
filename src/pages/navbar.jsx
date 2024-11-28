@@ -5,8 +5,11 @@ import logo from "../images/lionprint.png";
 
 const Navbar = () => {
   const [nom, setNom] = useState();
+
+  const backend = "http://localhost:500";
+
   useEffect(() => {
-    axios.get("https://backend.lion-print.net/authentification").then((res) => {
+    axios.get(`${backend}/authentification`).then((res) => {
       setNom(res.data.nomUser);
     });
   }, []);
@@ -14,7 +17,7 @@ const Navbar = () => {
   const deconnexion = (e) => {
     e.preventDefault();
     axios
-      .get("https://backend.lion-print.net/logout")
+      .get(`${backend}/logout`)
       .then((res) => {
         window.location.reload();
       })
