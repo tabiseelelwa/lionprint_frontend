@@ -6,7 +6,6 @@ const AjoutProduit = () => {
   const navigate = useNavigate();
   const [produits, setProduits] = useState({
     designation: "",
-    prix: "",
     categorie: "",
   });
 
@@ -31,11 +30,6 @@ const AjoutProduit = () => {
           onChange={(e) =>
             setProduits({ ...produits, designation: e.target.value })
           }
-        />
-        <input
-          type="texte"
-          placeholder="Prix du produit"
-          onChange={(e) => setProduits({ ...produits, prix: e.target.value })}
         />
         <input
           type="text"

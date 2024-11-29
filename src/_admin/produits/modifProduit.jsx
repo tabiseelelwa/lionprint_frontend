@@ -8,7 +8,6 @@ const ModifProduit = () => {
   const { codeProd } = useParams();
   const [produit, setProduit] = useState({
     designation: "",
-    prix: "",
     categorie: "",
   });
 
@@ -21,7 +20,6 @@ const ModifProduit = () => {
         setProduit({
           ...produit,
           designation: res.data[0].designProd,
-          prix: res.data[0].Prix,
           categorie: res.data[0].categorie,
         })
       )
@@ -52,12 +50,6 @@ const ModifProduit = () => {
             setProduit({ ...produit, designation: e.target.value })
           }
           value={produit.designation}
-        />
-        <input
-          type="texte"
-          placeholder="Prix du produit"
-          onChange={(e) => setProduit({ ...produit, prix: e.target.value })}
-          value={produit.prix}
         />
         <input
           type="text"

@@ -17,7 +17,7 @@ const AjoutClient = () => {
   const enregClient = (e) => {
     e.preventDefault();
     axios
-      .post(`${backend}https://backend.lion-print.net/creatClient`, clients)
+      .post(`${backend}/creatClient`, clients)
       .then((res) => {
         console.log(res.data);
         navigate("/liste-des-clients");

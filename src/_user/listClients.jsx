@@ -33,7 +33,7 @@ const ListClient = () => {
 
   const [currentPage, setCurrentpage] = useState(1);
 
-  const enregParPage = 10;
+  const enregParPage = window.innerWidth <= 800 ? 15 : 5;
   const lastIndex = currentPage * enregParPage;
   const firstIndex = lastIndex - enregParPage;
   const donnees = clients.slice(firstIndex, lastIndex);
@@ -53,7 +53,7 @@ const ListClient = () => {
       </div>
 
       <div id="tableau">
-        <table className="table W-100">
+        <table className="table ">
           <thead>
             <tr>
               <th>Numéro client</th>

@@ -65,7 +65,7 @@ const ListCommandes = () => {
 
   const [currentPage, setCurrentpage] = useState(1);
 
-  const enregParPage = 10;
+  const enregParPage = window.innerWidth <= 800 ? 10 : 5;
   const lastIndex = currentPage * enregParPage;
   const firstIndex = lastIndex - enregParPage;
   const donnees = cmds.slice(firstIndex, lastIndex);
@@ -89,7 +89,7 @@ const ListCommandes = () => {
         )}
       </div>
 
-      <div className="contener" id="cdesNulles">
+      <div id="cdesNulles">
         {cmdsNulles.map((cde, i) => {
           return (
             <div className="cde" key={i}>
@@ -109,7 +109,7 @@ const ListCommandes = () => {
         })}
       </div>
       <div id="tableau">
-        <table className="table w-100">
+        <table className="table ">
           <thead>
             <tr>
               <th>Numéro</th>

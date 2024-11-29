@@ -155,18 +155,22 @@
   min-width: 75vw;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  width: 100%;
-  justify-content: center;
+  margin-top: 12rem;
   align-items: center;
+
+  #tableau {
+    table {
+      width: 75vw;
+    }
+  }
 }
 
 #elmtsCde {
   display: flex;
-  padding: 5rem;
+  padding: 12rem 1rem;
   justify-content: center;
   width: 100vw;
-  height: 88vh;
+  height: 100vh;
   gap: 5rem;
 
   .cde {
@@ -234,7 +238,7 @@
     .btns {
       display: grid;
       grid-template-columns: 65% 28%;
-      gap: 2rem;
+      gap: 1rem;
       justify-content: space-between;
     }
   }
@@ -330,6 +334,8 @@
 }
 
 #cdesNulles {
+  display: flex;
+  width: 75vw;
   .cde {
     display: flex;
     flex-direction: column;
@@ -339,7 +345,7 @@
     color: #fff;
     width: 200px;
     border-radius: 0.5rem;
-    margin-bottom: 2rem;
+    margin: 2rem 0;
 
     .btnAjoutCde {
       border: none;
@@ -613,10 +619,8 @@
 
 .outlet {
   display: flex;
-  height: 100vh;
   width: 100vw;
   justify-content: center;
-  align-items: center;
 }
 
 @keyframes fadeModalIn {
@@ -701,7 +705,7 @@
 
   #listes {
     #head {
-      width: 96vw;
+      width: 100%;
       margin: 1rem;
       padding: 0.5rem;
     }
@@ -709,6 +713,10 @@
     #tableau {
       overflow: scroll;
       width: 96vw;
+
+      table {
+        width: 100%;
+      }
     }
   }
 
@@ -716,12 +724,12 @@
     padding: 0;
     margin: 0;
     .clientsCdes {
-      margin: 20rem 0 2rem 0;
+      margin: 10rem 0 2rem 0;
     }
   }
 
   #elmtsCde {
-    width: 96vw;
+    width: 94vw;
 
     table {
       width: 96vw;
@@ -732,10 +740,8 @@
 @media screen and (max-width: 678px) {
   #Accueil {
     padding: 0;
-    margin-top: 12rem;
 
     .clientsCdes {
-      margin: 15rem 0 2rem 0;
       display: flex;
       flex-direction: column;
 
@@ -778,6 +784,11 @@
         width: 94vw;
       }
     }
+  }
+
+  .controlsBtn {
+    flex-direction: column;
+    gap: 0.3rem;
   }
 }
 
