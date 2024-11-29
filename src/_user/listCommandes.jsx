@@ -65,7 +65,7 @@ const ListCommandes = () => {
 
   const [currentPage, setCurrentpage] = useState(1);
 
-  const enregParPage = window.innerWidth <= 800 ? 10 : 5;
+  const enregParPage = 15;
   const lastIndex = currentPage * enregParPage;
   const firstIndex = lastIndex - enregParPage;
   const donnees = cmds.slice(firstIndex, lastIndex);

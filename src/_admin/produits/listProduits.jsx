@@ -44,7 +44,7 @@ const ListProduits = () => {
       </div>
 
       <div id="tableau">
-        <table className="table w-100">
+        <table className="table">
           <thead>
             <tr>
               <th>Code produit</th>
