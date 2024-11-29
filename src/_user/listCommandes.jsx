@@ -151,7 +151,6 @@ const ListCommandes = () => {
                         </div>
                         <div onClick={() => Annuler(com.numCom)}>
                           <GoX
-                            // {...com.statut === "Annulée" ? "disabled" : null}
                             style={{
                               color: "red",
                               display: com.statut === "Annulée" ? "none" : "",

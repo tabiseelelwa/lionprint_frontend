@@ -330,11 +330,6 @@
 }
 
 #cdesNulles {
-  padding: 0 13.8rem;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-
   .cde {
     display: flex;
     flex-direction: column;
@@ -373,6 +368,9 @@
   transition: 300ms;
 
   .form-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     form {
       display: flex;
       justify-content: center;
@@ -737,7 +735,7 @@
     margin-top: 12rem;
 
     .clientsCdes {
-      margin: 20rem 0 2rem 0;
+      margin: 15rem 0 2rem 0;
       display: flex;
       flex-direction: column;
 
@@ -757,10 +755,28 @@
   }
 
   #ajoutClient {
-    width: 98vh;
+    width: 96vw;
+    padding: 1rem;
 
     form {
       width: 100%;
+    }
+  }
+
+  #cdesNulles {
+    width: 96vw;
+  }
+
+  #modalAjoutCommade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    .form-wrapper {
+      form {
+        width: 94vw;
+      }
     }
   }
 }

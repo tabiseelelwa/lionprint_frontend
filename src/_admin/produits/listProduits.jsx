@@ -49,7 +49,6 @@ const ListProduits = () => {
             <tr>
               <th>Code produit</th>
               <th>Désignation</th>
-              <th>Prix</th>
               <th>Catégorie</th>
               <th></th>
             </tr>
@@ -60,7 +59,6 @@ const ListProduits = () => {
                 <tr key={i}>
                   <td>{p.codeProd}</td>
                   <td>{p.designProd}</td>
-                  <td>{p.Prix}</td>
                   <td>{p.categorie}</td>
                   <td className="controlsBtn">
                     <Link to={`/admin/modif-produit/${p.codeProd}`}>
