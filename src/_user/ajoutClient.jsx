@@ -12,12 +12,12 @@ const AjoutClient = () => {
     telephone: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   const enregClient = (e) => {
     e.preventDefault();
     axios
-      .post(`${backend}https://backend.lion-print.net/creatClient`, clients)
+      .post(`${backend}http://localhost:500/creatClient`, clients)
       .then((res) => {
         console.log(res.data);
         navigate("/liste-des-clients");

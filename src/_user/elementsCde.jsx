@@ -21,7 +21,7 @@ const ElementsCde = () => {
     quantProd: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   // Récupération du numéro de la dernière commande
   useEffect(() => {

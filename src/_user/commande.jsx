@@ -11,7 +11,7 @@ const Commande = () => {
   const [nomClient, setNomClient] = useState([]);
   const [total, setTotal] = useState(0);
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   // Récupération des données de la facture
   useEffect(() => {

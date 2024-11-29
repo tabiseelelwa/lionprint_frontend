@@ -8,7 +8,7 @@ const AdminLayout = () => {
   axios.defaults.withCredentials = true;
   const [nom, setNom] = useState();
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   useEffect(() => {
     axios
