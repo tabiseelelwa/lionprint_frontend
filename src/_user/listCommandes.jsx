@@ -72,14 +72,14 @@ const ListCommandes = () => {
   const nbrPage = Math.ceil(cmds.length / enregParPage);
 
   return (
-    <div>
+    <div id="listes">
       {modal ? (
         <div>
           <AjoutCommande setModal={setModal} />
         </div>
       ) : null}
-      <div className="container w-75" id="head">
-        <div className="list-com">Liste de toutes les commandes</div>
+      <div id="head">
+        <div className="list-com">Les commandes</div>
         {role === "simple_user" ? (
           <Link className="ajoutCommande" onClick={() => setModal(true)}>
             Nouvelle commande
@@ -108,72 +108,75 @@ const ListCommandes = () => {
           );
         })}
       </div>
-
-      <table className="table container w-75">
-        <thead>
-          <tr>
-            <th>Numéro commande</th>
-            <th>Date commande</th>
-            <th>Nom du client</th>
-            <th>Statut</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {donnees.map((com, i) => {
-            return (
-              <tr key={i}>
-                <td>{com.numCom}</td>
-                <td>{com.dateCommande}</td>
-                <td>{com.client}</td>
-                <td>{com.statut}</td>
-                <td className="controlsBtn">
-                  {role === "simple_user" ? (
-                    <>
-                      <Link to={`/descript-commande/${com.numCom}`}>
-                        <GoEye
-                          style={{
-                            color: "black",
-                            fontSize: "18px",
-                            fontWeight: "650",
-                          }}
-                        />
-                      </Link>
-                      <div onClick={() => facturer(com.numCom)}>
-                        <GoCheck
-                          style={{
-                            color: "green",
-                            display: com.statut === "Facturée" ? "none" : "",
-                            fontSize: "18px",
-                            fontWeight: "650",
-                          }}
-                        />
-                      </div>
-                      <div onClick={() => Annuler(com.numCom)}>
-                        <GoX
-                          // {...com.statut === "Annulée" ? "disabled" : null}
-                          style={{
-                            color: "red",
-                            display: com.statut === "Annulée" ? "none" : "",
-                            fontSize: "18px",
-                            fontWeight: "650",
-                          }}
-                        />
-                      </div>
-                    </>
-                  ) : (
-                    <>
-                      <div onClick={() => suppri(com.numCom)}>
-                        <GoTrash style={{ color: "red", cursor: "pointer" }} />
-                      </div>
-                    </>
-                  )}
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div id="tableau">
+        <table className="table w-100">
+          <thead>
+            <tr>
+              <th>Numéro</th>
+              <th>Date</th>
+              <th>Client</th>
+              <th>Statut</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {donnees.map((com, i) => {
+              return (
+                <tr key={i}>
+                  <td>{com.numCom}</td>
+                  <td>{com.dateCommande}</td>
+                  <td>{com.client}</td>
+                  <td>{com.statut}</td>
+                  <td className="controlsBtn">
+                    {role === "simple_user" ? (
+                      <>
+                        <Link to={`/descript-commande/${com.numCom}`}>
+                          <GoEye
+                            style={{
+                              color: "black",
+                              fontSize: "18px",
+                              fontWeight: "650",
+                            }}
+                          />
+                        </Link>
+                        <div onClick={() => facturer(com.numCom)}>
+                          <GoCheck
+                            style={{
+                              color: "green",
+                              display: com.statut === "Facturée" ? "none" : "",
+                              fontSize: "18px",
+                              fontWeight: "650",
+                            }}
+                          />
+                        </div>
+                        <div onClick={() => Annuler(com.numCom)}>
+                          <GoX
+                            // {...com.statut === "Annulée" ? "disabled" : null}
+                            style={{
+                              color: "red",
+                              display: com.statut === "Annulée" ? "none" : "",
+                              fontSize: "18px",
+                              fontWeight: "650",
+                            }}
+                          />
+                        </div>
+                      </>
+                    ) : (
+                      <>
+                        <div onClick={() => suppri(com.numCom)}>
+                          <GoTrash
+                            style={{ color: "red", cursor: "pointer" }}
+                          />
+                        </div>
+                      </>
+                    )}
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       <div className="controls">
         <button onClick={precedent}>
           {nbrPage <= 1

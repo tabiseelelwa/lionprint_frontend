@@ -54,16 +54,17 @@
   }
 }
 
-.contener {
-  padding: 0 5rem;
-}
-
 .navba {
-  background-color: #000000e2;
   display: flex;
-  padding: 0.1rem 13.7rem 0rem;
   justify-content: space-between;
   align-items: center;
+  background-color: #000;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
+    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+  padding: 1.5rem 5rem !important;
+  position: fixed !important;
+  width: 100%;
+  z-index: 111;
 
   .user {
     color: #fff;
@@ -75,6 +76,13 @@
     p {
       margin-top: 1rem;
     }
+  }
+
+  .__menu {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30%;
+    width: 100%;
   }
 
   .menu {
@@ -120,15 +128,14 @@
 }
 
 #head {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #9dd9f5;
+  padding: 2rem;
+  width: 100%;
 
   .list-com {
-    padding: 2rem;
     font-size: 20px;
     font-weight: 650;
   }
@@ -140,9 +147,18 @@
     padding: 0.7rem;
     border-radius: 0.5rem;
     border: 1px solid var(--lpBorderColor);
-    // font-weight: 650;
     transition: var(--transition);
   }
+}
+
+#listes {
+  min-width: 75vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 #elmtsCde {
@@ -170,7 +186,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000;
+    background-color: #fff;
 
     form {
       display: flex;
@@ -353,7 +369,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #000000;
+  background-color: #fff;
   transition: 300ms;
 
   .form-wrapper {
@@ -419,7 +435,6 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
-      // border: #a9a5a5 1px solid;
       padding: 0.5rem;
 
       input,
@@ -437,11 +452,7 @@
 }
 
 #Accueil {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 14.2rem;
-  height: 88vh;
+  margin-top: 8rem;
   .clientsCdes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -506,47 +517,10 @@
           background-color: #04216a;
           width: 100%;
           padding: 1rem 2rem;
-          width: 250px;
           border-radius: 0.7rem;
         }
       }
     }
-
-    //   .produits,
-    //   .utilisateurs {
-    //     background-color: #04216a;
-    //     color: #fff;
-    //     width: 500px;
-    //     height: 200px;
-    //     text-align: center;
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: center;
-    //     padding: 2rem;
-    //     margin: 3rem 0;
-    //     border-radius: 1rem;
-    //   }
-    // }
-
-    // .client {
-    //   width: 100%;
-    //   display: flex;
-    //   justify-content: space-between;
-    //   gap: 2rem;
-
-    //   .clients {
-    //     width: 200px;
-    //     display: flex;
-    //     flex-direction: column;
-    //     align-items: center;
-    //     justify-content: center;
-    //     padding: 1rem;
-    //     background-color: #04216a;
-    //     color: #fff;
-    //     text-align: center;
-    //     border-radius: 1rem;
-    //   }
   }
 }
 
@@ -589,6 +563,7 @@
 #ajoutClient {
   display: flex;
   height: 88vh;
+  padding: 1rem;
   justify-content: center;
   align-items: center;
 
@@ -638,6 +613,14 @@
   }
 }
 
+.outlet {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
 @keyframes fadeModalIn {
   0% {
     transform: scale(0);
@@ -659,5 +642,132 @@
   span {
     color: #086dd2;
     font-weight: 600;
+  }
+}
+
+.nav__buttons {
+  display: none;
+}
+
+// MEDIA QUERIES
+
+@media screen and (max-width: 1024px) {
+  .navba {
+    position: relative;
+    align-items: center;
+    padding: 0.5rem !important;
+
+    .logo {
+      margin-left: 0.65rem;
+    }
+
+    .__menu {
+      position: absolute;
+      transition: var(--transition);
+      top: 6.7rem;
+      left: 0;
+      flex-direction: column;
+      background-color: #ffffff;
+      width: 100%;
+      justify-content: space-between;
+      padding: 1rem !important;
+      align-items: flex-start;
+      min-height: 90vh;
+      animation-name: menu_xd;
+      animation-duration: 0.4s;
+
+      .menu {
+        flex-direction: column;
+        a {
+          color: #000;
+        }
+      }
+    }
+
+    .nav__buttons {
+      display: inline-block;
+      color: #fff;
+      margin-right: 1.1rem;
+      font-size: 22px;
+      font-weight: 900;
+    }
+    .user {
+      margin: 0 2rem;
+      flex-direction: row-reverse;
+
+      p {
+        color: #000;
+      }
+    }
+  }
+
+  #listes {
+    #head {
+      width: 96vw;
+      margin: 1rem;
+      padding: 0.5rem;
+    }
+
+    #tableau {
+      overflow: scroll;
+      width: 96vw;
+    }
+  }
+
+  #Accueil {
+    padding: 0;
+    margin: 0;
+    .clientsCdes {
+      margin: 20rem 0 2rem 0;
+    }
+  }
+
+  #elmtsCde {
+    width: 96vw;
+
+    table {
+      width: 96vw;
+    }
+  }
+}
+
+@media screen and (max-width: 678px) {
+  #Accueil {
+    padding: 0;
+    margin: 0;
+    .clientsCdes {
+      margin: 20rem 0 2rem 0;
+      display: flex;
+      flex-direction: column;
+
+      .clients {
+        width: 370px;
+      }
+    }
+  }
+
+  #AccueilAdmin {
+    padding: 1rem;
+    margin-top: 7rem;
+
+    .cont {
+      flex-direction: column;
+    }
+  }
+
+  #ajoutClient {
+    width: 98vh;
+
+    form {
+      width: 100%;
+    }
+  }
+}
+
+// ANIMATIONS
+
+@keyframes menu_xd {
+  from {
+    transform: translateX(200%);
   }
 }

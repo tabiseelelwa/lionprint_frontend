@@ -31,7 +31,7 @@ const ListUtilisateurs = () => {
   const nbrPage = Math.ceil(users.length / enregParPage);
 
   return (
-    <div className="container w-75">
+    <div id="listes">
       <div id="head">
         <div className="list-com">Les utilisateurs</div>
         <Link className="ajoutCommande" to="/admin/nouvel-utilisateur">
@@ -39,32 +39,33 @@ const ListUtilisateurs = () => {
         </Link>
       </div>
 
-      <table className="table">
-        <thead>
-          <tr>
-            <th>Matricule</th>
-            <th>Nom</th>
-            <th>Postnom</th>
-            <th>Prénom</th>
-            <th>Email</th>
-            <th>Téléphone</th>
-            <th>Rôle</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {donnees.map((u, i) => {
-            return (
-              <tr key={i}>
-                <td>{u.idUser} </td>
-                <td>{u.nomUser}</td>
-                <td>{u.postnomUser}</td>
-                <td>{u.prenomUser}</td>
-                <td>{u.email}</td>
-                <td>{u.telephone}</td>
-                <td>{u.role}</td>
-                <td className="controlsBtn">
-                  {/* <Link to={`/admin/profil-utlisateur/${u.idUser}`}>
+      <div id="tableau">
+        <table className="table W-100">
+          <thead>
+            <tr>
+              <th>Matricule</th>
+              <th>Nom</th>
+              <th>Postnom</th>
+              <th>Prénom</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              <th>Rôle</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {donnees.map((u, i) => {
+              return (
+                <tr key={i}>
+                  <td>{u.idUser} </td>
+                  <td>{u.nomUser}</td>
+                  <td>{u.postnomUser}</td>
+                  <td>{u.prenomUser}</td>
+                  <td>{u.email}</td>
+                  <td>{u.telephone}</td>
+                  <td>{u.role}</td>
+                  <td className="controlsBtn">
+                    {/* <Link to={`/admin/profil-utlisateur/${u.idUser}`}>
                     <GoEye
                       style={{
                         color: "black",
@@ -73,29 +74,30 @@ const ListUtilisateurs = () => {
                       }}
                     />
                   </Link> */}
-                  <Link to={`/admin/modif-utilisateur/${u.idUser}`}>
-                    <GoPencil
-                      style={{
-                        fontSize: "18px",
-                        fontWeight: "650",
-                      }}
-                    />
-                  </Link>
-                  <Link onClick={() => supprimerUser(u.idUser)}>
-                    <GoTrash
-                      style={{
-                        color: "red",
-                        fontSize: "22px",
-                        fontWeight: "650",
-                      }}
-                    />
-                  </Link>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+                    <Link to={`/admin/modif-utilisateur/${u.idUser}`}>
+                      <GoPencil
+                        style={{
+                          fontSize: "18px",
+                          fontWeight: "650",
+                        }}
+                      />
+                    </Link>
+                    <Link onClick={() => supprimerUser(u.idUser)}>
+                      <GoTrash
+                        style={{
+                          color: "red",
+                          fontSize: "22px",
+                          fontWeight: "650",
+                        }}
+                      />
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       <div className="controls">
         <button onClick={precedent}>
           {nbrPage <= 1

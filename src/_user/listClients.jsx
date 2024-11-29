@@ -40,8 +40,8 @@ const ListClient = () => {
   const nbrPage = Math.ceil(clients.length / enregParPage);
 
   return (
-    <div className="container w-75">
-      <div className="" id="head">
+    <div id="listes">
+      <div id="head">
         <div className="list-com">Les clients</div>
         {role === "simple_user" ? (
           <Link className="ajoutCommande" to="/nouveau-client">
@@ -52,45 +52,47 @@ const ListClient = () => {
         )}
       </div>
 
-      <table className="table ">
-        <thead>
-          <tr>
-            <th>Numéro client</th>
-            <th>Nom </th>
-            <th>Postnom</th>
-            <th>Prénom</th>
-            <th>Email</th>
-            <th>Téléphone</th>
-            {role === "admin" ? <th></th> : ""}
-          </tr>
-        </thead>
-        <tbody>
-          {donnees.map((c, i) => {
-            return (
-              <tr key={i}>
-                <td>{c.numClient}</td>
-                <td>{c.nomClient} </td>
-                <td>{c.postnomClient}</td>
-                <td>{c.prenomClient}</td>
-                <td>{c.email}</td>
-                <td>{c.telephone}</td>
-                {role === "admin" ? (
-                  <td className="controlsBtn">
-                    <Link to={`/admin/modif-client/${c.numClient}`}>
-                      <GoPencil />
-                    </Link>
-                    <div onClick={() => suppClient(c.numClient)}>
-                      <GoTrash style={{ color: "red", cursor: "pointer" }} />
-                    </div>
-                  </td>
-                ) : (
-                  ""
-                )}
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div id="tableau">
+        <table className="table W-100">
+          <thead>
+            <tr>
+              <th>Numéro client</th>
+              <th>Nom </th>
+              <th>Postnom</th>
+              <th>Prénom</th>
+              <th>Email</th>
+              <th>Téléphone</th>
+              {role === "admin" ? <th></th> : ""}
+            </tr>
+          </thead>
+          <tbody>
+            {donnees.map((c, i) => {
+              return (
+                <tr key={i}>
+                  <td>{c.numClient}</td>
+                  <td>{c.nomClient} </td>
+                  <td>{c.postnomClient}</td>
+                  <td>{c.prenomClient}</td>
+                  <td>{c.email}</td>
+                  <td>{c.telephone}</td>
+                  {role === "admin" ? (
+                    <td className="controlsBtn">
+                      <Link to={`/admin/modif-client/${c.numClient}`}>
+                        <GoPencil />
+                      </Link>
+                      <div onClick={() => suppClient(c.numClient)}>
+                        <GoTrash style={{ color: "red", cursor: "pointer" }} />
+                      </div>
+                    </td>
+                  ) : (
+                    ""
+                  )}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       <div className="controls">
         <button onClick={precedent}>
           {nbrPage <= 1

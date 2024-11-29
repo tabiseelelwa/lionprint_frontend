@@ -35,7 +35,7 @@ const ListProduits = () => {
   const nbrPage = Math.ceil(produits.length / enregParPage);
 
   return (
-    <div className="container w-75">
+    <div id="listes">
       <div id="head">
         <div className="list-com">Nos produits</div>
         <Link className="ajoutCommande" to="/admin/ajout-produit">
@@ -43,48 +43,50 @@ const ListProduits = () => {
         </Link>
       </div>
 
-      <table className="table ">
-        <thead>
-          <tr>
-            <th>Code produit</th>
-            <th>Désignation</th>
-            <th>Prix</th>
-            <th>Catégorie</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {donnees.map((p, i) => {
-            return (
-              <tr key={i}>
-                <td>{p.codeProd}</td>
-                <td>{p.designProd}</td>
-                <td>{p.Prix}</td>
-                <td>{p.categorie}</td>
-                <td className="controlsBtn">
-                  <Link to={`/admin/modif-produit/${p.codeProd}`}>
-                    <GoPencil
-                      style={{
-                        fontSize: "18px",
-                        fontWeight: "650",
-                      }}
-                    />
-                  </Link>
-                  <Link onClick={() => supprimer(p.codeProd)}>
-                    <GoTrash
-                      style={{
-                        color: "red",
-                        fontSize: "22px",
-                        fontWeight: "650",
-                      }}
-                    />
-                  </Link>
-                </td>
-              </tr>
-            );
-          })}
-        </tbody>
-      </table>
+      <div id="tableau">
+        <table className="table w-100">
+          <thead>
+            <tr>
+              <th>Code produit</th>
+              <th>Désignation</th>
+              <th>Prix</th>
+              <th>Catégorie</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            {donnees.map((p, i) => {
+              return (
+                <tr key={i}>
+                  <td>{p.codeProd}</td>
+                  <td>{p.designProd}</td>
+                  <td>{p.Prix}</td>
+                  <td>{p.categorie}</td>
+                  <td className="controlsBtn">
+                    <Link to={`/admin/modif-produit/${p.codeProd}`}>
+                      <GoPencil
+                        style={{
+                          fontSize: "18px",
+                          fontWeight: "650",
+                        }}
+                      />
+                    </Link>
+                    <Link onClick={() => supprimer(p.codeProd)}>
+                      <GoTrash
+                        style={{
+                          color: "red",
+                          fontSize: "22px",
+                          fontWeight: "650",
+                        }}
+                      />
+                    </Link>
+                  </td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
       <div className="controls">
         <button onClick={precedent}>
           {nbrPage <= 1

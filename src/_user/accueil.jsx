@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import bgImage from "../images/image.jpg";
 
 const Accueil = () => {
   const [nombreClients, setNobreClients] = useState();
@@ -42,8 +43,7 @@ const Accueil = () => {
       id="Accueil"
       className="contener"
       style={{
-        backgroundImage: `url(
-        "images/image.jpg")`,
+        backgroundImage: `${bgImage}`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
@@ -52,7 +52,7 @@ const Accueil = () => {
       <div className="clientsCdes">
         <div className="clients">
           <h1>{nombreClients}</h1>
-          <p>Nombre de clients</p>
+          <p>clients</p>
         </div>
         <div className="clients">
           <h1>{nombreCmdesEnc}</h1>

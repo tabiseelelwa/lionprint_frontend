@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import AdminNav from "../_admin/adminNav";
 import axios from "axios";
+import Navbar from "../pages/navbar";
 
 const AdminLayout = () => {
   const navigate = useNavigate();
@@ -24,8 +24,10 @@ const AdminLayout = () => {
   });
   return (
     <div className={nom}>
-      <AdminNav />
-      <Outlet />
+      <Navbar />
+      <div className="outlet">
+        <Outlet />
+      </div>
     </div>
   );
 };
