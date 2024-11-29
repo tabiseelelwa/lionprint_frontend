@@ -12,7 +12,7 @@ const ModifProduit = () => {
     categorie: "",
   });
 
-  const backend = "http://localhost:500";
+  const backend = "https://backend.lion-print.net";
 
   useEffect(() => {
     axios

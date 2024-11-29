@@ -8,7 +8,7 @@ const AjoutCommande = ({ setModal }) => {
     nomClient: "",
   });
 
-  const backend = "http://localhost:500";
+  const backend = "https://backend.lion-print.net";
 
   const creatCommande = (e) => {
     e.preventDefault();

@@ -15,7 +15,7 @@ const ModifUtilisateur = () => {
     role: "",
   });
 
-  const backend = "http://localhost:500";
+  const backend = "https://backend.lion-print.net";
 
   useEffect(() => {
     axios.get(`${backend}/recupUser/` + idUser).then((res) =>
