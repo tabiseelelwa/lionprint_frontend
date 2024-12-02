@@ -33,7 +33,7 @@ const ListClient = () => {
 
   const [currentPage, setCurrentpage] = useState(1);
 
-  const enregParPage = window.innerWidth <= 800 ? 15 : 9;
+  const enregParPage = 10;
   const lastIndex = currentPage * enregParPage;
   const firstIndex = lastIndex - enregParPage;
   const donnees = clients.slice(firstIndex, lastIndex);
