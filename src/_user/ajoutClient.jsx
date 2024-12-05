@@ -12,7 +12,7 @@ const AjoutClient = () => {
     telephone: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   const enregClient = (e) => {
     e.preventDefault();

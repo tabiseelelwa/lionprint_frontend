@@ -9,7 +9,7 @@ const Operations = () => {
   const [nombreUtlisateurs, setNombreUtlisateurs] = useState();
   const [nombreProduits, setNombreProduits] = useState();
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   useEffect(() => {
     axios

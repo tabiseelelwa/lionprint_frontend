@@ -29,7 +29,7 @@ const Navbar = () => {
     });
   }, []);
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   useEffect(() => {
     axios.get(`${backend}/authentification`).then((res) => {

@@ -6,7 +6,7 @@ import axios from "axios";
 const ListProduits = () => {
   const [produits, setProduits] = useState([]);
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   useEffect(() => {
     axios

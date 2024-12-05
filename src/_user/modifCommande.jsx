@@ -1,11 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import axios from "axios";
-import React, { useEffect, useRef, useState } from "react";
-import { Link, useParams } from "react-router-dom";
-import { useReactToPrint } from "react-to-print";
-import { FaArrowLeft } from "react-icons/fa";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
-const Commande = () => {
+const ModifCommande = () => {
   const { num } = useParams();
   const [commande, setCommande] = useState([]);
   const [nomClient, setNomClient] = useState([]);
@@ -33,7 +30,6 @@ const Commande = () => {
       .catch((err) => console.log(err));
   }, []);
 
-  // CALCUL DU TOTAL DE LA FACTURE
   useEffect(() => {
     let lignes = document.querySelectorAll(".total");
     let somme = 0;
@@ -46,15 +42,10 @@ const Commande = () => {
     }
   });
 
-  const factuRef = useRef();
-  const imprimer = useReactToPrint({
-    content: () => factuRef.current,
-  });
-
   return (
     <div id="Commande">
       <div className="form">
-        <div ref={factuRef} className="body">
+        <div className="body" style={{ width: "100%", padding: "2rem" }}>
           <p>
             Nom client : <strong>{nomClient}</strong>
           </p>
@@ -97,37 +88,10 @@ const Commande = () => {
             <h3 style={{ fontWeight: "bold" }}>{total.toLocaleString()} $</h3>
           </div>
         </div>
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-between",
-            marginTop: "2rem",
-          }}
-        >
-          <button onClick={imprimer} >
-            Imprimer
-          </button>
-          <Link to="/list-cdes"
-            style={{
-              backgroundColor: "#2a0685",
-              border: "2px solid #2a0685",
-              textDecoration: "none",
-              textAlign: "center",
-              color: "#fff",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              padding: "0 0.3rem",
-              gap: "0.5rem",
-            }}
-          >
-            <FaArrowLeft />
-            Retour
-          </Link>
-        </div>
+        <button style={{ margin: " 0 5rem 0 1rem" }}>Termine</button>
       </div>
     </div>
   );
 };
 
-export default Commande;
+export default ModifCommande;

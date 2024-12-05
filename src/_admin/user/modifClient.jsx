@@ -14,7 +14,7 @@ const ModifClient = () => {
     telephone: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   useEffect(() => {
     axios

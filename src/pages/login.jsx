@@ -10,7 +10,7 @@ const Login = () => {
     mdp: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "http://localhost:500";
 
   axios.defaults.withCredentials = true;
   useEffect(() => {
