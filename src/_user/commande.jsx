@@ -11,7 +11,7 @@ const Commande = () => {
   const [nomClient, setNomClient] = useState([]);
   const [total, setTotal] = useState(0);
 
-  const backend = "http://localhost:500";
+  const backend = "https://backend.lion-print.net";
 
   // Récupération des données de la facture
   useEffect(() => {
@@ -104,10 +104,11 @@ const Commande = () => {
             marginTop: "2rem",
           }}
         >
-          <button onClick={imprimer} >
+          <button onClick={imprimer} style={{ borderRadius: "0.38rem" }}>
             Imprimer
           </button>
-          <Link to="/list-cdes"
+          <Link
+            to="/list-cdes"
             style={{
               backgroundColor: "#2a0685",
               border: "2px solid #2a0685",
@@ -119,6 +120,7 @@ const Commande = () => {
               justifyContent: "center",
               padding: "0 0.3rem",
               gap: "0.5rem",
+              borderRadius: "0.38rem",
             }}
           >
             <FaArrowLeft />

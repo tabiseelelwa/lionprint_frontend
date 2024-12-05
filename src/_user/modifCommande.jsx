@@ -8,7 +8,7 @@ const ModifCommande = () => {
   const [nomClient, setNomClient] = useState([]);
   const [total, setTotal] = useState(0);
 
-  const backend = "http://localhost:500";
+  const backend = "https://backend.lion-print.net";
 
   // Récupération des données de la facture
   useEffect(() => {

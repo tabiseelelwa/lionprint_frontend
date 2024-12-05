@@ -10,7 +10,7 @@ const ListCommandes = () => {
   const [cmdsNulles, setCmdsNulles] = useState([]);
   const [role, setRole] = useState();
 
-  const backend = "http://localhost:500";
+  const backend = "https://backend.lion-print.net";
 
   useEffect(() => {
     axios.get(`${backend}/authentification`).then((res) => {
@@ -143,7 +143,11 @@ const ListCommandes = () => {
                           <GoCheck
                             style={{
                               color: "green",
-                              display: com.statut === "Facturée" || com.statut === "Annulée" ? "none" : "",
+                              display:
+                                com.statut === "Facturée" ||
+                                com.statut === "Annulée"
+                                  ? "none"
+                                  : "",
                               fontSize: "18px",
                               fontWeight: "650",
                             }}
@@ -153,7 +157,11 @@ const ListCommandes = () => {
                           <GoX
                             style={{
                               color: "red",
-                              display: com.statut === "Facturée" || com.statut === "Annulée" ? "none" : "",
+                              display:
+                                com.statut === "Facturée" ||
+                                com.statut === "Annulée"
+                                  ? "none"
+                                  : "",
                               fontSize: "18px",
                               fontWeight: "650",
                             }}
