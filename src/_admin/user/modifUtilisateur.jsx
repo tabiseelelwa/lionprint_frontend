@@ -14,7 +14,7 @@ const ModifUtilisateur = () => {
     role: "",
   });
 
-  const backend = "https://backend.fizitech.org";
+  const backend = "https://backend-lp.fizitech.org";
 
   useEffect(() => {
     axios.get(`${backend}/recupUser/` + idUser).then((res) =>

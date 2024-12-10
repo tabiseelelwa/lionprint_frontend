@@ -10,7 +10,7 @@ const Login = () => {
     mdp: "",
   });
 
-  const backend = "https://backend.fizitech.org";
+  const backend = "https://backend-lp.fizitech.org";
 
   axios.defaults.withCredentials = true;
   useEffect(() => {

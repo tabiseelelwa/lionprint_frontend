@@ -9,7 +9,7 @@ const Operations = () => {
   const [nombreUtlisateurs, setNombreUtlisateurs] = useState();
   const [nombreProduits, setNombreProduits] = useState();
 
-  const backend = "https://backend.fizitech.org";
+  const backend = "https://backend-lp.fizitech.org";
 
   useEffect(() => {
     axios

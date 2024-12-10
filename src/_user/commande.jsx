@@ -10,7 +10,7 @@ const Commande = () => {
   const [nomClient, setNomClient] = useState([]);
   const [total, setTotal] = useState(0);
 
-  const backend = "https://backend.fizitech.org";
+  const backend = "https://backend-lp.fizitech.org";
 
   // Récupération des données de la facture
   useEffect(() => {

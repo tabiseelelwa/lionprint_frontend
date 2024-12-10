@@ -29,7 +29,7 @@ const Navbar = () => {
     });
   }, []);
 
-  const backend = "https://backend.fizitech.org";
+  const backend = "https://backend-lp.fizitech.org";
 
   useEffect(() => {
     axios.get(`${backend}/authentification`).then((res) => {

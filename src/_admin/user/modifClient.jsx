@@ -13,7 +13,7 @@ const ModifClient = () => {
     telephone: "",
   });
 
-  const backend = "https://backend.fizitech.org";
+  const backend = "https://backend-lp.fizitech.org";
 
   useEffect(() => {
     axios

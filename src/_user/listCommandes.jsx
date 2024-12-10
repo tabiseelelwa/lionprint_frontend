@@ -12,7 +12,7 @@ const ListCommandes = () => {
   const [role, setRole] = useState();
   const [btn, setBtn] = useState(window.innerWidth >= 800 ? true : false);
 
-  const backend = "https://backend.fizitech.org";
+  const backend = "https://backend-lp.fizitech.org";
 
   const closeBtn = () => {
     if (btn === true) {

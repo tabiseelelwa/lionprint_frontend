@@ -9,7 +9,7 @@ const AjoutProduit = () => {
     categorie: "",
   });
 
-  const backend = "https://backend.fizitech.org";
+  const backend = "https://backend-lp.fizitech.org";
 
   const createProd = (e) => {
     e.preventDefault();

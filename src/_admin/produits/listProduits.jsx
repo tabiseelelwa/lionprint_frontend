@@ -6,7 +6,7 @@ import axios from "axios";
 const ListProduits = () => {
   const [produits, setProduits] = useState([]);
 
-  const backend = "https://backend.fizitech.org";
+  const backend = "https://backend-lp.fizitech.org";
 
   useEffect(() => {
     axios
