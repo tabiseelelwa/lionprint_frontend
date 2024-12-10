@@ -20,7 +20,7 @@ const ElementsCde = () => {
     quantProd: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   // Récupération du numéro de la dernière commande
   useEffect(() => {

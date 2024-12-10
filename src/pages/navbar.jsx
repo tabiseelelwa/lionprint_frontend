@@ -29,7 +29,7 @@ const Navbar = () => {
     });
   }, []);
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   useEffect(() => {
     axios.get(`${backend}/authentification`).then((res) => {

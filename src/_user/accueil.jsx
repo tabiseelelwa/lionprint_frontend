@@ -8,7 +8,7 @@ const Accueil = () => {
   const [nombreCdesFactur, setNombreCdesFactur] = useState();
   const [nombreCdesAnnul, setNombreCdesAnnul] = useState();
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   useEffect(() => {
     axios

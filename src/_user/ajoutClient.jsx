@@ -12,7 +12,7 @@ const AjoutClient = () => {
     telephone: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   const enregClient = (e) => {
     e.preventDefault();

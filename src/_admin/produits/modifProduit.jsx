@@ -10,7 +10,7 @@ const ModifProduit = () => {
     categorie: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   useEffect(() => {
     axios

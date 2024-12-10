@@ -8,7 +8,7 @@ const AjoutCommande = ({ setModal }) => {
     nomClient: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   const creatCommande = (e) => {
     e.preventDefault();

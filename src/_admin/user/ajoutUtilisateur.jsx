@@ -11,7 +11,7 @@ const AjoutUtilisateur = () => {
     telephone: "",
   });
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   const enregUser = (e) => {
     e.preventDefault();

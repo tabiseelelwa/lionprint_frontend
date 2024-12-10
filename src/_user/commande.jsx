@@ -1,4 +1,3 @@
-
 import axios from "axios";
 import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
@@ -11,7 +10,7 @@ const Commande = () => {
   const [nomClient, setNomClient] = useState([]);
   const [total, setTotal] = useState(0);
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   // Récupération des données de la facture
   useEffect(() => {

@@ -6,7 +6,7 @@ import axios from "axios";
 const ListUtilisateurs = () => {
   const [users, setUsers] = useState([]);
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   useEffect(() => {
     axios

@@ -9,7 +9,7 @@ const ModifCde = () => {
   const [nomClient, setNomClient] = useState([]);
   const [total, setTotal] = useState(0);
 
-  const backend = "https://backend.lion-print.net";
+  const backend = "https://backend.fizitech.org";
 
   // Récupération des données de la facture
   useEffect(() => {
